@@ -8,12 +8,9 @@ pipeline {
         }
        stage('Build'){
             steps{
-               withDockerRegistry(credentialsId: 'docker-hub2', url: 'https://index.docker.io/v1/') {
-    // some block
-               }
-                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
-                   sh '''docker build -t giangdt3/devops-tutorial:v10.'''
-                   sh '''docker push giangdt3/devops-tutorial:v10.'''
+               withDockerRegistry(credentialsId: 'docker-hub2') {
+                  sh 'docker build -t giangdt3/devops-tutorial:v10.'
+                  sh 'docker build giangdt3/devops-tutorial:v10'
                }
             }
         }
