@@ -6,7 +6,7 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('docker-hub')
   }
-//   stages {
+  stages {
 //     stage('Build') {
 //       steps {
 //         sh 'docker build -t giangdt3/jenkins-docker-hub .'
