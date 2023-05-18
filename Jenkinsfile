@@ -6,12 +6,12 @@ pipeline {
                 git 'https://github.com/giang123b/devops-tutorial.git'
             }
         }
-       stage('Build'){
-            steps{
-               withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
+//        stage('Build'){
+//             steps{
+//                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
                   
-               }
-            }
-        }
+//                }
+//             }
+//         }
     }
 }
