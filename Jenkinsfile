@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t giangdt3/jenkins-docker-hub .'
+        sh 'sudo docker build -t giangdt3/demodevops .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push giangdt3/jenkins-docker-hub'
+        sh 'docker push giangdt3/demodevops'
       }
     }
   }
