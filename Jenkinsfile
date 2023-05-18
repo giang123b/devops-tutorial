@@ -7,11 +7,11 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('docker-hub')
   }
   stages {
-//     stage('Build') {
-//       steps {
-//         sh 'docker build -t giangdt3/jenkins-docker-hub .'
-//       }
-//     }
+    stage('Build') {
+      steps {
+        sh 'docker build -t giangdt3/jenkins-docker-hub .'
+      }
+    }
     stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
@@ -19,13 +19,13 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push lloydmatereke/jenkins-docker-hub'
+        sh 'docker push giangdt3/jenkins-docker-hub'
       }
     }
   }
-//   post {
-//     always {
-//       sh 'docker logout'
-//     }
-//   }
+  post {
+    always {
+      sh 'docker logout'
+    }
+  }
 }
