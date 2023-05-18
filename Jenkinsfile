@@ -6,10 +6,10 @@ pipeline {
                 git 'https://github.com/giang123b/devops-tutorial.git'
             }
         }
-        stage('Build image') {
-           steps{
-              app = docker.build("giangdt/demodevops")
-           }
-        }
+//         stage('Build image') {
+//            steps{
+//               app = docker.build("giangdt/demodevops")
+//            }
+//         }
     }
 }
