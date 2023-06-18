@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t giangdt3/usecase1 .'
+        sh 'docker build -t giangdt3/demodevops .'
       }
     }
     stage('Login') {
